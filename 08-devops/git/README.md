@@ -5,7 +5,7 @@ Git 相关内容统一收敛到这个目录，建议把 [Git基础.md](./Git基�
 ## 推荐入口
 
 - [Git 基础总览](./Git基础.md)
-- [Git 远程仓库(Github)](./Git 远程仓库(Github).md)
+- [Git 远程仓库(Github)](./Git%20远程仓库%28Github%29.md)
 - [Git 查看提交历史](./Git 查看提交历史.md)
 - [Git 标签](./Git 标签.md)
 

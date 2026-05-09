@@ -9,7 +9,7 @@
 推荐入口：
 
 - [LeetCode 题解](./leetcode/LeetCode题解.md)
-- [LeetCode 动态规划](./leetcode/Leetcode%20-动态规划.md)
+- [LeetCode 动态规划](./leetcode/Leetcode -动态规划.md)
 - [剑指 Offer](./sword-offer/剑指Offer题解.md)
 - [排序算法比较](./sorting/排序算法比较.md)
 

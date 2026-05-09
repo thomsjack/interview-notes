@@ -5,7 +5,7 @@
 当前可直接参考的内容：
 
 - [重构](../06-design-patterns/重构.md)
-- [项目重构建议](../interview-notes-refactor-suggestions.md)
+- [项目重构建议](../06-design-patterns/重构.md)
 - [面试复习建议](../review-tips.md)
 
 后续新增与代码质量、命名规范、重构经验相关的内容，建议优先归档到这里。

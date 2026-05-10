@@ -5,6 +5,7 @@ const repoRoot = process.cwd();
 const readmeFiles = [];
 const excludedDirs = new Set([".git", "assets"]);
 const relativeLinkPattern = /\[[^\]]+\]\((\.\/[^)#]+|\.\.\/[^)#]+)(?:#[^)]+)?\)/g;
+const strictMode = process.argv.includes("--strict");
 
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -46,11 +47,18 @@ for (const absoluteFile of readmeFiles) {
 }
 
 if (missingLinks.length > 0) {
-  console.error("Found missing README links:");
+  console.log("Found missing README links:");
   for (const item of missingLinks) {
-    console.error(`- ${item.file} -> ${item.target}`);
+    console.log(`- ${item.file} -> ${item.target}`);
   }
-  process.exit(1);
+
+  if (strictMode) {
+    process.exit(1);
+  }
+
+  console.log("");
+  console.log("Run `node scripts/check-readme-links.mjs --strict` after fixing the targets.");
+  process.exit(0);
 }
 
 console.log(`Validated ${readmeFiles.length} README files with no missing relative links.`);

@@ -6,7 +6,7 @@
 - `sword-offer/`：剑指 Offer 题解
 - `sorting/`：排序算法
 
-推荐入口：
+## 推荐入口
 
 - [LeetCode 题解](./leetcode/LeetCode题解.md)
 - [LeetCode 动态规划](./leetcode/Leetcode -动态规划.md)

@@ -6,7 +6,7 @@
 - `mq/`：消息模型、消息队列、RabbitMQ
 - `security/`：安全机制与攻击技术
 
-推荐入口：
+## 推荐入口
 
 - [系统设计基础](./系统设计基础.md)
 - [分布式专题](./distributed/README.md)

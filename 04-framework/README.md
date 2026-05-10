@@ -6,7 +6,7 @@
 - `spring-cloud/`：Spring Cloud / Spring Cloud Alibaba
 - `mybatis/`：MyBatis 基础与常见问题
 
-推荐入口：
+## 推荐入口
 
 - [Spring Bean 的生命周期](./spring/Spring Bean的生命周期.md)
 - [Spring MVC 运行流程](./spring/spring mvc 运行流程.md)

@@ -19,6 +19,7 @@
 - 复习建议统一维护在 [review-tips.md](./review-tips.md)。
 - 批量补齐文档导航时，执行 `node scripts/standardize-markdown-navigation.mjs`。
 - 调整专题 `README.md` 链接后，先执行 `node scripts/check-readme-links.mjs` 查看失效项，再执行 `node scripts/check-readme-links.mjs --strict` 做严格校验。
+- 调整专题入口页时，先执行 `node scripts/check-readme-entry-pages.mjs` 查看结构缺口，再执行 `node scripts/check-readme-entry-pages.mjs --strict` 做严格校验。
 
 ## 渐进式重构
 

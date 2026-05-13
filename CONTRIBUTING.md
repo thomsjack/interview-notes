@@ -17,6 +17,7 @@
 - 新增主题目录时，请补充对应的 `README.md` 导航页。
 - 根目录 [README.md](./README.md) 只保留总览和导航，不再堆叠长篇正文。
 - 复习建议统一维护在 [review-tips.md](./review-tips.md)。
+- 维护脚本的用途、适用场景和推荐执行顺序统一记录在 [scripts/README.md](./scripts/README.md)。
 - 批量补齐文档导航时，执行 `node scripts/standardize-markdown-navigation.mjs`。
 - 调整专题 `README.md` 链接后，先执行 `node scripts/check-readme-links.mjs` 查看失效项，再执行 `node scripts/check-readme-links.mjs --strict` 做严格校验。
 - 调整专题入口页时，先执行 `node scripts/check-readme-entry-pages.mjs` 查看结构缺口，再执行 `node scripts/check-readme-entry-pages.mjs --strict` 做严格校验。

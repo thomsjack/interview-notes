@@ -76,14 +76,32 @@ node scripts/check-readme-entry-pages.mjs --strict
 - 默认模式用于查看结构缺口
 - `--strict` 模式适合在批量收口后做最终校验
 
+### `check-markdown-navigation.mjs`
+
+用途：
+- 审计普通笔记页是否带有统一的导航区块
+- 检查导航里的相对链接是否有效，以及是否保留返回仓库首页入口
+
+使用方式：
+
+```bash
+node scripts/check-markdown-navigation.mjs
+node scripts/check-markdown-navigation.mjs --strict
+```
+
+说明：
+- 默认模式用于查看哪些普通 Markdown 页面还没有对齐导航规范
+- `--strict` 模式适合在批量补齐导航后做全仓校验
+
 ## 推荐维护顺序
 
 当你改动目录导航或专题入口页时，建议按这个顺序执行：
 
 1. 如有需要，先运行 `node scripts/standardize-markdown-navigation.mjs`
-2. 运行 `node scripts/check-readme-links.mjs --strict`
-3. 运行 `node scripts/check-readme-entry-pages.mjs --strict`
-4. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
+2. 运行 `node scripts/check-markdown-navigation.mjs --strict`
+3. 运行 `node scripts/check-readme-links.mjs --strict`
+4. 运行 `node scripts/check-readme-entry-pages.mjs --strict`
+5. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
 
 <!-- note-nav:start -->
 ## 导航

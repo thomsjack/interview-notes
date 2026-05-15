@@ -93,10 +93,27 @@ node scripts/check-markdown-navigation.mjs --strict
 - 默认模式用于查看哪些普通 Markdown 页面还没有对齐导航规范
 - `--strict` 模式适合在批量补齐导航后做全仓校验
 
+### `run-maintenance-checks.mjs`
+
+用途：
+- 按仓库推荐顺序串行执行全部维护校验
+- 适合在提交前做一次完整的仓库维护检查
+
+使用方式：
+
+```bash
+node scripts/run-maintenance-checks.mjs
+```
+
+说明：
+- 脚本会依次运行导航、README 链接、README 入口页、根文档链接四类检查
+- 任一步失败都会以非零退出码结束，方便作为提交前自检入口
+
 ## 推荐维护顺序
 
 当你改动目录导航或专题入口页时，建议按这个顺序执行：
 
+0. 想一次性跑完整套检查时，直接执行 `node scripts/run-maintenance-checks.mjs`
 1. 如有需要，先运行 `node scripts/standardize-markdown-navigation.mjs`
 2. 运行 `node scripts/check-markdown-navigation.mjs --strict`
 3. 运行 `node scripts/check-readme-links.mjs --strict`

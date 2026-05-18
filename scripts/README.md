@@ -106,8 +106,25 @@ node scripts/run-maintenance-checks.mjs
 ```
 
 说明：
-- 脚本会依次运行导航、README 链接、README 入口页、根文档链接四类检查
+- 脚本会依次运行导航、README 链接、README 入口页、根 README 主题覆盖、根文档链接五类检查
 - 任一步失败都会以非零退出码结束，方便作为提交前自检入口
+
+### `check-root-readme-topics.mjs`
+
+用途：
+- 校验根 `README.md` 是否覆盖所有编号顶层主题目录
+- 检查每个顶层主题目录是否都有 `README.md`
+- 检查根 `README.md` 里的顶层主题入口是否存在失效或多余链接
+
+使用方式：
+
+```bash
+node scripts/check-root-readme-topics.mjs
+```
+
+说明：
+- 适合在新增、调整或收拢一级主题目录后运行
+- 如果根 `README.md` 与顶层主题结构不一致，脚本会直接返回非零退出码
 
 ## 推荐维护顺序
 
@@ -118,7 +135,8 @@ node scripts/run-maintenance-checks.mjs
 2. 运行 `node scripts/check-markdown-navigation.mjs --strict`
 3. 运行 `node scripts/check-readme-links.mjs --strict`
 4. 运行 `node scripts/check-readme-entry-pages.mjs --strict`
-5. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
+5. 如果改了根目录主题导航，再运行 `node scripts/check-root-readme-topics.mjs`
+6. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
 
 <!-- note-nav:start -->
 ## 导航

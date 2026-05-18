@@ -19,6 +19,11 @@ const checks = [
     args: ["scripts/check-readme-entry-pages.mjs", "--strict"],
   },
   {
+    label: "根 README 主题覆盖校验",
+    command: "node",
+    args: ["scripts/check-root-readme-topics.mjs"],
+  },
+  {
     label: "根文档链接校验",
     command: "node",
     args: ["scripts/check-root-doc-links.mjs"],

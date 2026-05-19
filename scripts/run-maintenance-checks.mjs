@@ -24,6 +24,11 @@ const checks = [
     args: ["scripts/check-root-readme-topics.mjs"],
   },
   {
+    label: "根 README 结构校验",
+    command: "node",
+    args: ["scripts/check-root-readme-structure.mjs"],
+  },
+  {
     label: "根文档链接校验",
     command: "node",
     args: ["scripts/check-root-doc-links.mjs"],

@@ -106,7 +106,7 @@ node scripts/run-maintenance-checks.mjs
 ```
 
 说明：
-- 脚本会依次运行导航、README 链接、README 入口页、根 README 主题覆盖、根文档链接五类检查
+- 脚本会依次运行导航、README 链接、README 入口页、根 README 主题覆盖、根 README 结构、根文档链接六类检查
 - 任一步失败都会以非零退出码结束，方便作为提交前自检入口
 
 ### `check-root-readme-topics.mjs`
@@ -126,6 +126,23 @@ node scripts/check-root-readme-topics.mjs
 - 适合在新增、调整或收拢一级主题目录后运行
 - 如果根 `README.md` 与顶层主题结构不一致，脚本会直接返回非零退出码
 
+### `check-root-readme-structure.mjs`
+
+用途：
+- 校验根 `README.md` 的核心章节是否齐全且顺序稳定
+- 检查“复习与维护”章节是否保留关键维护入口
+- 提前发现首页结构被误删、打散或重排的情况
+
+使用方式：
+
+```bash
+node scripts/check-root-readme-structure.mjs
+```
+
+说明：
+- 适合在调整根 `README.md` 的内容组织、维护说明或目录导航后运行
+- 如果首页缺少关键章节或维护入口，脚本会直接返回非零退出码
+
 ## 推荐维护顺序
 
 当你改动目录导航或专题入口页时，建议按这个顺序执行：
@@ -136,7 +153,8 @@ node scripts/check-root-readme-topics.mjs
 3. 运行 `node scripts/check-readme-links.mjs --strict`
 4. 运行 `node scripts/check-readme-entry-pages.mjs --strict`
 5. 如果改了根目录主题导航，再运行 `node scripts/check-root-readme-topics.mjs`
-6. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
+6. 如果改了根 README 的章节组织，再运行 `node scripts/check-root-readme-structure.mjs`
+7. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
 
 <!-- note-nav:start -->
 ## 导航

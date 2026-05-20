@@ -106,8 +106,25 @@ node scripts/run-maintenance-checks.mjs
 ```
 
 说明：
-- 脚本会依次运行导航、README 链接、README 入口页、根 README 主题覆盖、根 README 结构、根文档链接六类检查
+- 脚本会依次运行导航、README 链接、README 入口页、脚本说明覆盖、根 README 主题覆盖、根 README 结构、根文档链接七类检查
 - 任一步失败都会以非零退出码结束，方便作为提交前自检入口
+
+### `check-scripts-readme-coverage.mjs`
+
+用途：
+- 校验 `scripts/README.md` 是否覆盖当前仓库中的维护脚本
+- 检查脚本说明里是否引用了已经不存在的脚本文件
+- 提前发现脚本新增后忘记补说明的情况
+
+使用方式：
+
+```bash
+node scripts/check-scripts-readme-coverage.mjs
+```
+
+说明：
+- 适合在新增、删除或重命名维护脚本后运行
+- 如果脚本清单和说明文档不一致，脚本会直接返回非零退出码
 
 ### `check-root-readme-topics.mjs`
 
@@ -152,9 +169,10 @@ node scripts/check-root-readme-structure.mjs
 2. 运行 `node scripts/check-markdown-navigation.mjs --strict`
 3. 运行 `node scripts/check-readme-links.mjs --strict`
 4. 运行 `node scripts/check-readme-entry-pages.mjs --strict`
-5. 如果改了根目录主题导航，再运行 `node scripts/check-root-readme-topics.mjs`
-6. 如果改了根 README 的章节组织，再运行 `node scripts/check-root-readme-structure.mjs`
-7. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
+5. 如果改了 `scripts/` 下的脚本或说明，再运行 `node scripts/check-scripts-readme-coverage.mjs`
+6. 如果改了根目录主题导航，再运行 `node scripts/check-root-readme-topics.mjs`
+7. 如果改了根 README 的章节组织，再运行 `node scripts/check-root-readme-structure.mjs`
+8. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
 
 <!-- note-nav:start -->
 ## 导航

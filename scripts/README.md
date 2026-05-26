@@ -106,8 +106,25 @@ node scripts/run-maintenance-checks.mjs
 ```
 
 说明：
-- 脚本会依次运行导航、README 链接、README 入口页、脚本说明覆盖、根 README 主题覆盖、根 README 结构、根文档链接七类检查
+- 脚本会依次运行导航、README 链接、README 入口页、贡献指南维护、脚本说明覆盖、根 README 主题覆盖、根 README 结构、根文档链接八类检查
 - 任一步失败都会以非零退出码结束，方便作为提交前自检入口
+
+### `check-contributing-maintenance.mjs`
+
+用途：
+- 校验 `CONTRIBUTING.md` 的核心章节是否齐全且顺序稳定
+- 检查贡献指南是否保留一键维护检查入口和关键维护命令
+- 提前发现贡献流程说明被误删、遗漏或与维护脚本脱节的情况
+
+使用方式：
+
+```bash
+node scripts/check-contributing-maintenance.mjs
+```
+
+说明：
+- 适合在调整贡献指南、维护流程文案或脚本入口后运行
+- 如果 `CONTRIBUTING.md` 缺少关键命令、链接或导航标记，脚本会直接返回非零退出码
 
 ### `check-scripts-readme-coverage.mjs`
 
@@ -169,10 +186,11 @@ node scripts/check-root-readme-structure.mjs
 2. 运行 `node scripts/check-markdown-navigation.mjs --strict`
 3. 运行 `node scripts/check-readme-links.mjs --strict`
 4. 运行 `node scripts/check-readme-entry-pages.mjs --strict`
-5. 如果改了 `scripts/` 下的脚本或说明，再运行 `node scripts/check-scripts-readme-coverage.mjs`
-6. 如果改了根目录主题导航，再运行 `node scripts/check-root-readme-topics.mjs`
-7. 如果改了根 README 的章节组织，再运行 `node scripts/check-root-readme-structure.mjs`
-8. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
+5. 如果改了贡献指南或维护流程入口，再运行 `node scripts/check-contributing-maintenance.mjs`
+6. 如果改了 `scripts/` 下的脚本或说明，再运行 `node scripts/check-scripts-readme-coverage.mjs`
+7. 如果改了根目录主题导航，再运行 `node scripts/check-root-readme-topics.mjs`
+8. 如果改了根 README 的章节组织，再运行 `node scripts/check-root-readme-structure.mjs`
+9. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
 
 <!-- note-nav:start -->
 ## 导航

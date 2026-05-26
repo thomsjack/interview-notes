@@ -19,6 +19,11 @@ const checks = [
     args: ["scripts/check-readme-entry-pages.mjs", "--strict"],
   },
   {
+    label: "贡献指南维护校验",
+    command: "node",
+    args: ["scripts/check-contributing-maintenance.mjs"],
+  },
+  {
     label: "脚本说明覆盖校验",
     command: "node",
     args: ["scripts/check-scripts-readme-coverage.mjs"],

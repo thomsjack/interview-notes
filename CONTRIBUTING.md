@@ -23,6 +23,7 @@
 - 调整普通笔记页后，先执行 `node scripts/check-markdown-navigation.mjs` 查看导航缺口，再执行 `node scripts/check-markdown-navigation.mjs --strict` 做全仓校验。
 - 调整专题 `README.md` 链接后，先执行 `node scripts/check-readme-links.mjs` 查看失效项，再执行 `node scripts/check-readme-links.mjs --strict` 做严格校验。
 - 调整专题入口页时，先执行 `node scripts/check-readme-entry-pages.mjs` 查看结构缺口，再执行 `node scripts/check-readme-entry-pages.mjs --strict` 做严格校验。
+- 调整 `review-tips.md` 或根目录复习入口后，执行 `node scripts/check-review-tips-structure.mjs`，确认复习建议页的核心结构保持稳定。
 - 新增、删除或重命名维护脚本后，执行 `node scripts/check-scripts-readme-coverage.mjs`，确认 `scripts/README.md` 与真实脚本清单保持一致。
 - 调整根目录主题导航或新增一级主题目录后，执行 `node scripts/check-root-readme-topics.mjs`，确认根 `README.md` 与顶层结构保持一致。
 - 调整根 `README.md` 的章节结构或维护入口后，执行 `node scripts/check-root-readme-structure.mjs`，确认首页核心结构没有漂移。

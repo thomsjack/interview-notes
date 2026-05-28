@@ -25,6 +25,7 @@
 - 调整专题入口页时，先执行 `node scripts/check-readme-entry-pages.mjs` 查看结构缺口，再执行 `node scripts/check-readme-entry-pages.mjs --strict` 做严格校验。
 - 调整 `review-tips.md` 或根目录复习入口后，执行 `node scripts/check-review-tips-structure.mjs`，确认复习建议页的核心结构保持稳定。
 - 新增、删除或重命名维护脚本后，执行 `node scripts/check-scripts-readme-coverage.mjs`，确认 `scripts/README.md` 与真实脚本清单保持一致。
+- 调整维护脚本总入口或推荐步骤顺序后，执行 `node scripts/check-maintenance-check-order.mjs`，确认聚合检查脚本与 `scripts/README.md` 没有漂移。
 - 调整根目录主题导航或新增一级主题目录后，执行 `node scripts/check-root-readme-topics.mjs`，确认根 `README.md` 与顶层结构保持一致。
 - 调整根 `README.md` 的章节结构或维护入口后，执行 `node scripts/check-root-readme-structure.mjs`，确认首页核心结构没有漂移。
 

@@ -34,6 +34,11 @@ const checks = [
     args: ["scripts/check-scripts-readme-coverage.mjs"],
   },
   {
+    label: "维护顺序同步校验",
+    command: "node",
+    args: ["scripts/check-maintenance-check-order.mjs"],
+  },
+  {
     label: "根 README 主题覆盖校验",
     command: "node",
     args: ["scripts/check-root-readme-topics.mjs"],

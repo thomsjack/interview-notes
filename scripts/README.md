@@ -106,7 +106,7 @@ node scripts/run-maintenance-checks.mjs
 ```
 
 说明：
-- 脚本会依次运行导航、README 链接、README 入口页、复习建议结构、贡献指南维护、脚本说明覆盖、维护顺序同步、根 README 主题覆盖、根 README 结构、根文档链接十类检查
+- 脚本会依次运行导航、README 链接、README 入口页、复习建议结构、贡献指南维护、脚本说明覆盖、维护顺序同步、根 README 主题覆盖、根 README 复习顺序、根 README 结构、根文档链接十一类检查
 - 任一步失败都会以非零退出码结束，方便作为提交前自检入口
 
 ### `check-review-tips-structure.mjs`
@@ -194,6 +194,23 @@ node scripts/check-root-readme-topics.mjs
 - 适合在新增、调整或收拢一级主题目录后运行
 - 如果根 `README.md` 与顶层主题结构不一致，脚本会直接返回非零退出码
 
+### `check-root-readme-study-order.mjs`
+
+用途：
+- 校验根 `README.md` 的“推荐复习顺序”章节是否仍然存在
+- 检查该章节是否保留 6 条编号建议与核心复习路径提示
+- 提前发现首页复习路径被误删、缩减或改散的情况
+
+使用方式：
+
+```bash
+node scripts/check-root-readme-study-order.mjs
+```
+
+说明：
+- 适合在调整根 `README.md` 的复习节奏说明或首页推荐路径后运行
+- 如果“推荐复习顺序”缺少关键步骤或核心主题提示，脚本会直接返回非零退出码
+
 ### `check-root-readme-structure.mjs`
 
 用途：
@@ -225,8 +242,9 @@ node scripts/check-root-readme-structure.mjs
 7. 如果改了 `scripts/` 下的脚本或说明，再运行 `node scripts/check-scripts-readme-coverage.mjs`
 8. 如果改了维护脚本总入口或推荐步骤顺序，再运行 `node scripts/check-maintenance-check-order.mjs`
 9. 如果改了根目录主题导航，再运行 `node scripts/check-root-readme-topics.mjs`
-10. 如果改了根 README 的章节组织，再运行 `node scripts/check-root-readme-structure.mjs`
-11. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
+10. 如果改了首页推荐复习路径，再运行 `node scripts/check-root-readme-study-order.mjs`
+11. 如果改了根 README 的章节组织，再运行 `node scripts/check-root-readme-structure.mjs`
+12. 如果改了根文档，再运行 `node scripts/check-root-doc-links.mjs`
 
 <!-- note-nav:start -->
 ## 导航

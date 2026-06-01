@@ -44,6 +44,11 @@ const checks = [
     args: ["scripts/check-root-readme-topics.mjs"],
   },
   {
+    label: "根 README 复习顺序校验",
+    command: "node",
+    args: ["scripts/check-root-readme-study-order.mjs"],
+  },
+  {
     label: "根 README 结构校验",
     command: "node",
     args: ["scripts/check-root-readme-structure.mjs"],

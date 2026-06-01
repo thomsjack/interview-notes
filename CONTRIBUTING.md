@@ -27,6 +27,7 @@
 - 新增、删除或重命名维护脚本后，执行 `node scripts/check-scripts-readme-coverage.mjs`，确认 `scripts/README.md` 与真实脚本清单保持一致。
 - 调整维护脚本总入口或推荐步骤顺序后，执行 `node scripts/check-maintenance-check-order.mjs`，确认聚合检查脚本与 `scripts/README.md` 没有漂移。
 - 调整根目录主题导航或新增一级主题目录后，执行 `node scripts/check-root-readme-topics.mjs`，确认根 `README.md` 与顶层结构保持一致。
+- 调整首页“推荐复习顺序”或复习主线路径后，执行 `node scripts/check-root-readme-study-order.mjs`，确认首页推荐顺序仍然完整可用。
 - 调整根 `README.md` 的章节结构或维护入口后，执行 `node scripts/check-root-readme-structure.mjs`，确认首页核心结构没有漂移。
 
 ## 渐进式重构

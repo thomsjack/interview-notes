@@ -21,6 +21,13 @@ MongoDB 相关内容集中在这个目录，适合按“概念 -> CRUD -> 索引
 - [Windows 平台安装 MongoDB](./Windows 平台安装 MongoDB.md)
 - [PHP7 MongoDB 安装与使用](./PHP7 MongDB 安装与使用.md)
 
+## 快速复习
+
+- 先用 [NoSQL 简介](./NoSQL 简介.md) 和 [MongoDB 概念解析](./MongoDB 概念解析.md) 说明 MongoDB 的定位、文档模型和适用场景。
+- 再顺着 [MongoDB 创建数据库](./MongoDB 创建数据库.md)、[MongoDB 查询文档](./MongoDB 查询文档.md) 和 [MongoDB 更新文档](./MongoDB 更新文档.md) 复习 CRUD 基础能力。
+- 进阶面试常见问题可以集中到 [MongoDB 索引](./MongoDB 索引.md)、[MongoDB 聚合](./MongoDB 聚合.md)、[MongoDB 复制（副本集）](./MongoDB 复制（副本集）.md) 和 [MongoDB 分片](./MongoDB 分片.md)。
+- 如果被问到部署或环境差异，再回看安装类文档补充不同平台的准备步骤。
+
 ---
 
 <!-- note-nav:start -->

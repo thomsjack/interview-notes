@@ -18,6 +18,13 @@
 - [Java常见问题](./Java常见问题.md)
 - [JSON转换](./JSON转换.md)
 
+## 快速复习
+
+- 先用 [Java 简介](./Java 简介.md) 和 [Java 基础语法](./Java 基础语法.md) 建立“语言定位 + 基本写法”的口述框架。
+- 再串讲 [Java 对象和类](./Java 对象和类.md)、[Java 继承](./Java 继承.md) 和 [Java 接口](./Java 接口.md)，把面向对象三件套讲顺。
+- 遇到异常、泛型和正则类问题时，优先回看 [Java 异常处理](./Java 异常处理.md)、[Java 泛型](./Java 泛型.md) 和 [Java 正则表达式](./Java 正则表达式.md)。
+- 如果面试偏工程细节，可以用 [Java常见问题](./Java常见问题.md) 和 [JSON转换](./JSON转换.md) 作为补充收口。
+
 ---
 
 <!-- note-nav:start -->

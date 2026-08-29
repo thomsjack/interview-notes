@@ -42,6 +42,8 @@
 
 ### 05 System Design
 - [总览](./05-system-design/README.md)
+- [大模型高并发推理服务架构设计](./05-system-design/ai-infrastructure/大模型推理服务与算力架构.md) 🌟
+- [现代智能体运行时与持久化架构设计](./05-system-design/ai-infrastructure/现代智能体运行时与持久化状态架构.md) 🌟
 - [系统设计基础](./05-system-design/系统设计基础.md)
 - [分布式](./05-system-design/distributed/README.md)
 - [消息队列](./05-system-design/mq/消息队列.md)

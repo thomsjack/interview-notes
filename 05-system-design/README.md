@@ -2,12 +2,15 @@
 
 系统设计相关内容按主题拆分为：
 
+- `ai-infrastructure/`：大模型推理服务（PagedAttention / 连续批处理）、智能体运行时与 MCP 协议
 - `distributed/`：分布式、集群、ZooKeeper、一致性哈希
 - `mq/`：消息模型、消息队列、RabbitMQ
 - `security/`：安全机制与攻击技术
 
 ## 推荐入口
 
+- [大模型高并发推理服务架构设计](./ai-infrastructure/大模型推理服务与算力架构.md) 🌟（前沿系统设计热点）
+- [现代智能体运行时与持久化状态架构](./ai-infrastructure/现代智能体运行时与持久化状态架构.md) 🌟（前沿系统设计热点）
 - [系统设计基础](./系统设计基础.md)
 - [分布式专题](./distributed/README.md)
 - [消息队列](./mq/消息队列.md)

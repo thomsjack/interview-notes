@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# VitePress build outputs & cache
+.vitepress/dist/
+.vitepress/cache/
+
+# OS metadata & logs
+.DS_Store
+Thumbs.db
+*.log

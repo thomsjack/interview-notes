@@ -4,6 +4,8 @@
 
 ## 如何使用
 
+- 🌐 在线阅读：[https://loulanyue.github.io/interview-notes/](https://loulanyue.github.io/interview-notes/)（支持全文即时检索、多级侧边栏导航与明暗主题切换）
+- 💻 本地预览：克隆后运行 `npm run docs:dev` 启动本地文档站服务，或 `npm run docs:build` 生成静态产物
 - 想按主题复习：从下面的“目录导航”进入对应专题
 - 想抓高频主线：优先看各主题目录里的 `README.md` 或总览页
 - 想做复盘和口述训练：搭配 [review-tips.md](./review-tips.md) 一起使用

@@ -17,6 +17,7 @@
 
 连接数据库的Java代码如下：
 
+```java
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
@@ -35,18 +36,23 @@ public class MongoDBJDBC{
      }
    }
 }
+```
+
 现在，让我们来编译运行程序并连接到数据库 mycol。
 
 你可以根据你的实际环境改变 MongoDB JDBC 驱动的路径。
 
 本实例将 MongoDB JDBC 启动包 mongo-java-driver-3.2.2.jar 放在本地目录下:
 
+```bash
 $ javac -cp .:mongo-java-driver-3.2.2.jar MongoDBJDBC.java
 $ java -cp .:mongo-java-driver-3.2.2.jar MongoDBJDBC
 Connect to database successfully
 Authentication: true
+```
 本实例中 Mongo 数据库无需用户名密码验证。如果你的 Mongo 需要验证用户名及密码，可以使用以下代码：
 
+```java
 import java.util.ArrayList;  
 import java.util.List;  
 import com.mongodb.MongoClient;  
@@ -84,6 +90,7 @@ public class MongoDBJDBC {
 
 代码片段如下：
 
+```java
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
@@ -114,6 +121,7 @@ Connect to database successfully
 
 代码片段如下：
 
+```java
 import org.bson.Document;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -136,15 +144,21 @@ public class MongoDBJDBC{
      }
    }
 }
+```
+
 编译运行以上程序，输出结果如下:
 
+```txt
 Connect to database successfully
 集合 test 选择成功
+```
+
 插入文档
 我们可以使用com.mongodb.client.MongoCollection类的 insertMany() 方法来插入一个文档
 
 代码片段如下：
 
+```java
 import java.util.ArrayList;
 import java.util.List;
 import org.bson.Document;
@@ -184,11 +198,16 @@ public class MongoDBJDBC{
       }
    }
 }
+```
+
 编译运行以上程序，输出结果如下:
 
+```txt
 Connect to database successfully
 集合 test 选择成功
 文档插入成功
+```
+
 检索所有文档
 我们可以使用 com.mongodb.client.MongoCollection 类中的 find() 方法来获取集合中的所有文档。
 
@@ -196,6 +215,7 @@ Connect to database successfully
 
 代码片段如下：
 
+```java
 import org.bson.Document;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -233,16 +253,22 @@ public class MongoDBJDBC{
       }
    }
 }
+```
+
 编译运行以上程序，输出结果如下:
 
+```txt
 Connect to database successfully
 集合 test 选择成功
 Document{{_id=56e65fb1fd57a86304fe2692, title=MongoDB, description=database, likes=100, by=Fly}}
+```
+
 更新文档
 你可以使用 com.mongodb.client.MongoCollection 类中的 updateMany() 方法来更新集合中的文档。
 
 代码片段如下：
 
+```java
 import org.bson.Document;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -278,16 +304,22 @@ public class MongoDBJDBC{
       }
    }
 }
+```
+
 编译运行以上程序，输出结果如下:
 
+```txt
 Connect to database successfully
 集合 test 选择成功
 Document{{_id=56e65fb1fd57a86304fe2692, title=MongoDB, description=database, likes=200, by=Fly}}
+```
+
 删除第一个文档
 要删除集合中的第一个文档，首先你需要使用com.mongodb.DBCollection类中的 findOne()方法来获取第一个文档，然后使用remove 方法删除。
 
 代码片段如下：
 
+```java
 import org.bson.Document;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -325,10 +357,14 @@ public class MongoDBJDBC{
      }
    }
 }
+```
+
 编译运行以上程序，输出结果如下:
 
+```txt
 Connect to database successfully
 集合 test 选择成功
+```
 
 ---
 

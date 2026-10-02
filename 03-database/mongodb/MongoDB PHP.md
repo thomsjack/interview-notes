@@ -9,27 +9,37 @@ MongoDB PHP在各平台上的安装及驱动包下载请查看:PHP安装MongoDB�
 
 代码片段如下：
 
+```php
 <?php
 $m = new MongoClient(); // 连接默认主机和端口为：mongodb://localhost:27017
 $db = $m->test; // 获取名称为 "test" 的数据库
 ?>
+```
+
 创建集合
 创建集合的代码片段如下：
 
+```php
 <?php
 $m = new MongoClient(); // 连接
 $db = $m->test; // 获取名称为 "test" 的数据库
 $collection = $db->createCollection("runoob");
 echo "集合创建成功";
 ?>
+```
+
 执行以上程序，输出结果如下：
 
+```txt
 集合创建成功
+```
+
 插入文档
 在mongoDB中使用 insert() 方法插入文档：
 
 插入文档代码片段如下：
 
+```php
 <?php
 $m = new MongoClient();    // 连接到mongodb
 $db = $m->test;            // 选择一个数据库
@@ -44,18 +54,22 @@ $document = array(
 $collection->insert($document);
 echo "数据插入成功";
 ?>
+```
+
 执行以上程序，输出结果如下：
 
+```txt
 数据插入成功
+```
+
 然后我们在 mongo 客户端使用 db.runoob.find().pretty(); 命令查看数据：
-
-
 
 查找文档
 使用find() 方法来读取集合中的文档。
 
 读取使用文档的代码片段如下：
 
+```php
 <?php
 $m = new MongoClient();    // 连接到mongodb
 $db = $m->test;            // 选择一个数据库
@@ -67,15 +81,20 @@ foreach ($cursor as $document) {
     echo $document["title"] . "\n";
 }
 ?>
+```
+
 执行以上程序，输出结果如下：
 
+```txt
 MongoDB
+```
+
 更新文档
 使用 update() 方法来更新文档。
 
 以下实例将更新文档中的标题为' MongoDB 教程'， 代码片段如下：
 
-<pre>
+```php
 <?php
 $m = new MongoClient();    // 连接到mongodb
 $db = $m->test;            // 选择一个数据库
@@ -89,18 +108,22 @@ foreach ($cursor as $document) {
     echo $document["title"] . "\n";
 }
 ?>
+```
+
 执行以上程序，输出结果如下：
 
+```txt
 MongoDB 教程
+```
+
 然后我们在 mongo 客户端使用 db.runoob.find().pretty(); 命令查看数据：
-
-
 
 删除文档
 使用 remove() 方法来删除文档。
 
 以下实例中我们将移除 'title' 为 'MongoDB 教程' 的一条数据记录。， 代码片段如下：
 
+```php
 <?php
 $m = new MongoClient();    // 连接到mongodb
 $db = $m->test;            // 选择一个数据库
@@ -115,6 +138,8 @@ foreach ($cursor as $document) {
     echo $document["title"] . "\n";
 }
 ?>
+```
+
 除了以上实例外，在php中你还可以使用findOne(), save(), limit(), skip(), sort()等方法来操作Mongodb数据库。
 
 ---

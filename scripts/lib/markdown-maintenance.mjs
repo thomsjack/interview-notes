@@ -5,7 +5,7 @@ export const repoRoot = process.cwd();
 export const navMarkerStart = "<!-- note-nav:start -->";
 export const navMarkerEnd = "<!-- note-nav:end -->";
 
-const defaultExcludedDirs = new Set([".git", "assets"]);
+const defaultExcludedDirs = new Set([".git", "assets", ".vitepress", "node_modules", "dist", ".github"]);
 
 export function toPosixPath(value) {
   return value.replaceAll(path.sep, "/");

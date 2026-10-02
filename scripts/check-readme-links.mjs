@@ -3,7 +3,7 @@ import path from "node:path";
 
 const repoRoot = process.cwd();
 const readmeFiles = [];
-const excludedDirs = new Set([".git", "assets"]);
+const excludedDirs = new Set([".git", "assets", ".vitepress", "node_modules", "dist", ".github"]);
 const relativeLinkPattern = /\[[^\]]+\]\((\.\/[^)#]+|\.\.\/[^)#]+)(?:#[^)]+)?\)/g;
 const strictMode = process.argv.includes("--strict");
 

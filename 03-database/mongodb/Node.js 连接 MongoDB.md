@@ -62,12 +62,15 @@ MongoClient.connect(url, function(err, db) {
 });
 执行以下命令输出就结果为：
 
+```bash
 $ node test.js
 文档插入成功
+```
 从输出结果来看，数据已插入成功。
 
 我们也可以打开 MongoDB 的客户端查看数据，如：
 
+```bash
 > show dbs
 runoob  0.000GB          # 自动创建了 runoob 数据库
 > show tables
@@ -75,6 +78,7 @@ site                     # 自动创建了 site 集合（数据表）
 > db.site.find()
 { "_id" : ObjectId("5a794e36763eb821b24db854"), "name" : "菜鸟教程", "url" : "www.runoob" }
 > 
+``` 
 如果要插入多条数据可以使用 insertMany()：
 
 插入多条数据

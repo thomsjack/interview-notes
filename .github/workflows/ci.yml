@@ -24,8 +24,14 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Run maintenance checks
-        run: node scripts/run-maintenance-checks.mjs
+        run: npm test
+
+      - name: Verify docs site build
+        run: npm run docs:build
 
       - name: Verify no uncommitted navigation drifts
         run: |

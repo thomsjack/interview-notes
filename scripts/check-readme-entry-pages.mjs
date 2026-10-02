@@ -4,7 +4,7 @@ import path from "node:path";
 const repoRoot = process.cwd();
 const strictMode = process.argv.includes("--strict");
 const readmeFiles = [];
-const excludedDirs = new Set([".git", "assets"]);
+const excludedDirs = new Set([".git", "assets", ".vitepress", "node_modules", "dist", ".github"]);
 const rootReadme = "README.md";
 const navMarker = "<!-- note-nav:start -->";
 const recommendedHeadingPattern = /## (推荐入口|目录导航|子目录|主题导航|当前整理方向)/;

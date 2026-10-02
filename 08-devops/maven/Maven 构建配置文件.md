@@ -124,21 +124,25 @@ pom.xml 文件如下：
           </build>
       </profile>
    </profiles>
-</project>
-注意：构建配置文件采用的是 <profiles> 节点。
-说明：上面新建了三个 <profiles>，其中 <id> 区分了不同的 <profiles> 执行不同的 AntRun 任务；而 AntRun 的任务可以这么理解，AntRun 监听 test 的 Maven 生命周期阶段，当 Maven 执行 test 时，就除了发 AntRun 的任务，任务里面为输出文本并复制文件到指定的位置；而至于要执行哪个 AntRun 任务，此时构建配置文件起到了传输指定的作用，比如，通过命令行参数输入指定的 <id>。
+注意：构建配置文件采用的是 `<profiles>` 节点。
+说明：上面新建了三个 `<profiles>`，其中 `<id>` 区分了不同的 `<profiles>` 执行不同的 AntRun 任务；而 AntRun 的任务可以这么理解，AntRun 监听 test 的 Maven 生命周期阶段，当 Maven 执行 test 时，就除了发 AntRun 的任务，任务里面为输出文本并复制文件到指定的位置；而至于要执行哪个 AntRun 任务，此时构建配置文件起到了传输指定的作用，比如，通过命令行参数输入指定的 `<id>`。
+
 执行命令：
+```bash
 mvn test -Ptest
-提示：第一个 test 为 Maven 生命周期阶段，第 2 个 test 为构建配置文件指定的 <id> 参数，这个参数通过 -P 来传输，当然，它可以是 prod 或者 normal 这些由你定义的<id>。
+```
+提示：第一个 test 为 Maven 生命周期阶段，第 2 个 test 为构建配置文件指定的 `<id>` 参数，这个参数通过 -P 来传输，当然，它可以是 prod 或者 normal 这些由你定义的`<id>`。
 运行的结果如下：
 
-可以看出成功的触发了AntRun的任务。并且是对应构建配置文件下的 <id> 为 test 的任务。
+可以看出成功的触发了AntRun的任务。并且是对应构建配置文件下的 `<id>` 为 test 的任务。
 再测试其余两个命令，结果如下：
 
 
 2、通过Maven设置激活配置文件
 打开 %USER_HOME%/.m2 目录下的 settings.xml 文件，其中 %USER_HOME% 代表用户主目录。如果 setting.xml 文件不存在就直接拷贝 %M2_HOME%/conf/settings.xml 到 .m2 目录，其中 %M2_HOME% 代表 Maven 的安装目录。
-配置 setting.xml 文件，增加 <activeProfiles>属性：
+配置 setting.xml 文件，增加 `<activeProfiles>`属性：
+
+```xml
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -148,15 +152,21 @@ mvn test -Ptest
       <activeProfile>test</activeProfile>
    </activeProfiles>
 </settings>
+```
+
 执行命令：
+```bash
 mvn test
-提示 1：此时不需要使用 -Ptest 来输入参数了，上面的 setting.xml 文件的 <activeprofile> 已经指定了 test 参数代替了。
+```
+提示 1：此时不需要使用 -Ptest 来输入参数了，上面的 setting.xml 文件的 `<activeprofile>` 已经指定了 test 参数代替了。
 提示 2：同样可以使用在 %M2_HOME%/conf/settings.xml 的文件进行配置，效果一致。
 执行结果：
 
 3、通过环境变量激活配置文件
 先把上一步测试的 setting.xml 值全部去掉。
-然后在 pom.xml 里面的 <id> 为 test 的 <profile> 节点，加入 <activation> 节点：
+然后在 pom.xml 里面的 `<id>` 为 test 的 `<profile>` 节点，加入 `<activation>` 节点：
+
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -260,15 +270,20 @@ mvn test
           </build>
       </profile>
    </profiles>
-</project>
+```
+
 执行命令：
+```bash
 mvn test -Denv=test
-提示 1：上面使用 -D 传递环境变量，其中 evn 对应刚才设置的 <name> 值，test 对应<value>。
+```
+提示 1：上面使用 -D 传递环境变量，其中 evn 对应刚才设置的 `<name>` 值，test 对应`<value>`。
 提示 2：在 Windows 10 上测试了系统的环境变量，但是不生效，所以，只能通过 -D 传递。
 执行结果：
 
 4、通过操作系统激活配置文件
 activation 元素包含下面的操作系统信息。当系统为 windows XP 时，test Profile 将会被触发。
+
+```xml
 <profile>
    <id>test</id>
    <activation>
@@ -280,10 +295,18 @@ activation 元素包含下面的操作系统信息。当系统为 windows XP 时
       </os>
    </activation>
 </profile>
+```
+
 现在打开命令控制台，跳转到 pom.xml 所在目录，并执行下面的 mvn 命令。不要使用 -P 选项指定 Profile 的名称。Maven 将显示被激活的 test Profile 的结果。
+
+```bash
 mvn test
+```
+
 5、通过文件的存在或者缺失激活配置文件
 现在使用 activation 元素包含下面的操作系统信息。当 target/generated-sources/axistools/wsdl2java/com/companyname/group 缺失时，test Profile 将会被触发。
+
+```xml
 <profile>
    <id>test</id>
    <activation>
@@ -293,8 +316,13 @@ mvn test
       </file>
    </activation>
 </profile>
+```
+
 现在打开命令控制台，跳转到 pom.xml 所在目录，并执行下面的 mvn 命令。不要使用 -P 选项指定 Profile 的名称。Maven 将显示被激活的 test Profile 的结果。
+
+```bash
 mvn test
+```
 
 ---
 

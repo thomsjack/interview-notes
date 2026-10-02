@@ -15,6 +15,8 @@
 修改项目的 pom.xml
 我们将会使用 Maven 发布的插件来创建一个自动化发布过程。
 例如，bus-core-api 项目的 pom.xml 文件代码如下：
+
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -26,17 +28,14 @@
    <packaging>jar</packaging> 
    <scm>
       <url>http://www.svn.com</url>
-      <connection>scm:svn:http://localhost:8080/svn/jrepo/trunk/
-      Framework</connection>
-      <developerConnection>scm:svn:${username}/${password}@localhost:8080:
-      common_core_api:1101:code</developerConnection>
+      <connection>scm:svn:http://localhost:8080/svn/jrepo/trunk/Framework</connection>
+      <developerConnection>scm:svn:${username}/${password}@localhost:8080:common_core_api:1101:code</developerConnection>
    </scm>
    <distributionManagement>
       <repository>
          <id>Core-API-Java-Release</id>
          <name>Release repository</name>
-         <url>http://localhost:8081/nexus/content/repositories/
-         Core-Api-Release</url>
+         <url>http://localhost:8081/nexus/content/repositories/Core-Api-Release</url>
       </repository>
    </distributionManagement>
    <build>
@@ -48,13 +47,13 @@
             <configuration>
                <useReleaseProfile>false</useReleaseProfile>
                <goals>deploy</goals>
-               <scmCommentPrefix>[bus-core-api-release-checkin]-<
-               /scmCommentPrefix>
+               <scmCommentPrefix>[bus-core-api-release-checkin]-</scmCommentPrefix>
             </configuration>
          </plugin>
       </plugins>
    </build>
 </project>
+```
 在 pom.xml 文件中，我们常用到的一些重要元素节点如下表所示：
 元素节点	描述
 SCM	配置 SVN 的路径，Maven 将从该路径下将代码取下来。

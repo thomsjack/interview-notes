@@ -102,27 +102,38 @@ MongoDB 后台管理 Shell
 
 当你进入mongoDB后台后，它默认会链接到 test 文档（数据库）：
 
+```bash
 > mongo
 MongoDB shell version: 3.0.6
 connecting to: test
 ……
+```
+
 由于它是一个JavaScript shell，您可以运行一些简单的算术运算:
 
+```javascript
 > 2 + 2
 4
 >
+```
+
 db 命令用于查看当前操作的文档（数据库）：
 
+```javascript
 > db
 test
 >
+```
+
 插入一些简单的记录并查找它：
 
+```javascript
 > db.runoob.insert({x:10})
 WriteResult({ "nInserted" : 1 })
 > db.runoob.find()
 { "_id" : ObjectId("5604ff74a274a611b0c990aa"), "x" : 10 }
 >
+```
 第一个命令将数字 10 插入到 runoob 集合的 x 字段中。
 
 ---

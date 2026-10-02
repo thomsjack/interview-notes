@@ -77,6 +77,7 @@ printf的转义序列
 \ddd	表示1到3位数八进制值的字符。仅在格式字符串中有效
 \0ddd	表示1到3位的八进制值字符
 实例
+```bash
 $ printf "a string, no processing:<%s>\n" "A\nB"
 a string, no processing:<A\nB>
 
@@ -86,6 +87,7 @@ B>
 
 $ printf "www.runoob.com \a"
 www.runoob.com $                  #不换行
+```
 
 ---
 

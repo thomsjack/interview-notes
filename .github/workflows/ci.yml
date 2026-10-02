@@ -1,0 +1,33 @@
+name: CI Maintenance Checks
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
+
+jobs:
+  maintenance-checks:
+    name: Run Maintenance & Navigation Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run maintenance checks
+        run: node scripts/run-maintenance-checks.mjs
+
+      - name: Verify no uncommitted navigation drifts
+        run: |
+          node scripts/standardize-markdown-navigation.mjs
+          git diff --exit-code || (echo "Error: Markdown navigation drift detected. Please run 'node scripts/standardize-markdown-navigation.mjs' before submitting." && exit 1)

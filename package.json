@@ -1,0 +1,35 @@
+{
+  "name": "interview-notes",
+  "version": "1.0.0",
+  "description": "面向AI Agent智能体、前后端、通用技术面试准备的知识库",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/run-maintenance-checks.mjs",
+    "check": "node scripts/run-maintenance-checks.mjs",
+    "check:nav": "node scripts/check-markdown-navigation.mjs --strict",
+    "check:links": "node scripts/check-readme-links.mjs --strict",
+    "check:entries": "node scripts/check-readme-entry-pages.mjs --strict",
+    "format:nav": "node scripts/standardize-markdown-navigation.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loulanyue/interview-notes.git"
+  },
+  "keywords": [
+    "interview",
+    "interview-preparation",
+    "computer-science",
+    "java",
+    "database",
+    "system-design",
+    "ai-agent",
+    "algorithms",
+    "devops"
+  ],
+  "author": "loulanyue",
+  "license": "Apache-2.0"
+}

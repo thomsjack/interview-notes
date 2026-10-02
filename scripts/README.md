@@ -249,5 +249,4 @@ node scripts/check-root-readme-structure.mjs
 <!-- note-nav:start -->
 ## 导航
 - [返回仓库首页](../README.md)
-- [查看贡献规范](../CONTRIBUTING.md)
 <!-- note-nav:end -->
